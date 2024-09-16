@@ -4,11 +4,14 @@ extends CharacterBody2D
 @onready var celda: Node = $celda
 @onready var mruv: Node = $mruv
 @onready var states: Dictionary = {"mruv": mruv, "celda": celda}
-@onready var state = states.get("mruv")
+@onready var state = states.get("celda")
+@onready var tile_map: TileMap = $"../TileMap"
 
 func _physics_process(delta):
 	if Input.is_action_just_pressed("celda"):
+		velocity = Vector2.ZERO
 		state = states.get("celda")
+		state.snap_to_grid()
 	if Input.is_action_just_pressed("mruv"):
 		state = states.get("mruv")
 	var direccion = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
