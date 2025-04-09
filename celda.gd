@@ -9,11 +9,11 @@ func mover(direccion: Vector2):
 	#get_parent().position +=direccion * cell
 	if Input.is_action_just_released("click"):
 		move_to(parent.get_global_mouse_position())
-	
+
 func snap_to_grid():
 	move_to(parent.global_position)
 
 func move_to(target: Vector2):
 	var index:Vector2i = tile_map.local_to_map(target)
 	var indexPosition:Vector2 = Vector2(index.x, index.y)
-	parent.position = indexPosition* cell + offsetGrid
+	parent.position = indexPosition * cell + offsetGrid
