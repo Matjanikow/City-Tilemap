@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://dql4ejoa3bmpg"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_3y87k"]
+[ext_resource type="Texture2D" uid="uid://c8p2hdxko0j1o" path="res://Assets/kenney_tiny-battle/Tiles/tile_0172.png" id="2_vpyvd"]
+[ext_resource type="Script" path="res://celda.gd" id="3_gy1gb"]
+[ext_resource type="Script" path="res://mruv.gd" id="4_a810l"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_11gbo"]
+radius = 8.06226
+
+[node name="Player" type="CharacterBody2D"]
+position = Vector2(8, 8)
+scale = Vector2(4, 4)
+script = ExtResource("1_3y87k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_11gbo")
+
+[node name="Plane" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_vpyvd")
+
+[node name="celda" type="Node" parent="."]
+script = ExtResource("3_gy1gb")
+
+[node name="mruv" type="Node" parent="."]
+script = ExtResource("4_a810l")

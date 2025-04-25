@@ -5,7 +5,7 @@ extends CharacterBody2D
 @onready var mruv: Node = $mruv
 @onready var states: Dictionary = {"mruv": mruv, "celda": celda}
 @onready var state = states.get("celda")
-@onready var tile_map: TileMap = $"../TileMap"
+@export var tile_map: TileMap
 
 func _physics_process(delta):
 	if Input.is_action_just_pressed("celda"):

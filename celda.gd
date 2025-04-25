@@ -2,7 +2,7 @@ extends Node
 
 var cell:int = 16
 const offsetGrid:Vector2 = Vector2(8,8)
-@export var tile_map: TileMap 
+@onready var tile_map: TileMap = get_parent().tile_map
 @onready var parent = get_parent()
 
 func mover(direccion: Vector2):
